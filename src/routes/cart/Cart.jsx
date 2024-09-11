@@ -15,6 +15,7 @@ const Cart = () => {
         dispatch(removeFromCart(product))
     }
 
+    const productTotal = (product) => (product.discountPercentage * product.quantity).toFixed(2)
     const total = cartProducts.reduce((acc, product) => acc + product.discountPercentage * product.quantity, 0);
     const subtotal = (total * 0.88).toFixed(2);
 
@@ -45,7 +46,7 @@ const Cart = () => {
                             <td className='border-b border-b-gray-400 py-6 text-center'><img className="w-10 ml-16" src={product.thumbnail} alt="" /></td>
                             <td className='border-b border-b-gray-400 py-6 text-center'>{product.title}</td>
                             <td className="border-b border-b-gray-400 py-6 text-center pr-20">
-                                <b className="text-xl">{product.discountPercentage * product.quantity}</b>
+                                <b className="text-xl">${productTotal(product)}</b>
                             </td>
                             <td className='border-b border-b-gray-400 py-6 text-end'>
                                 <div className="flex justify-center items-center gap-3">
