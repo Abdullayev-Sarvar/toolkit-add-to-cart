@@ -5,7 +5,9 @@ const Nav = () => {
     <div className="bg-black">
         <div className="w-full max-w-[1366px] h-full mx-auto px-4">
           <div className="flex justify-between items-center gap-8 py-5">
-            <strong className="text-white text-2xl">Add to cart</strong>
+            <strong className="text-white text-2xl">
+              <Link to="/">Add to cart</Link>
+            </strong>
             <ul className="flex items-center gap-3">
                 <li className="text-white text-xl"><Link to="/">Home</Link></li>
                 <li className="text-white text-xl"><Link to="/cart">Cart</Link></li>
